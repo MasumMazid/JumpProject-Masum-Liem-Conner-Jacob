@@ -24,8 +24,8 @@ public class UserDAOClass implements UserDAO {
                 usersList.add( new User(
                     rs.getInt("user_id"),
                     rs.getString("full_name"),
-                    rs.getString("user_name"),
-                    rs.getString("password")
+                    rs.getString("password"),
+		    rs.getString("user_name")
                 ));
             }
             
@@ -51,11 +51,11 @@ public class UserDAOClass implements UserDAO {
 			rs.next();
 			
 			User user = new User(
-                rs.getInt("user_id"),
-                rs.getString("full_name"),
-				rs.getString("user_name"),
-				rs.getString("password")
-            );
+                		rs.getInt("user_id"),
+                    		rs.getString("full_name"),
+                    		rs.getString("password"),
+		    		rs.getString("user_name")
+            		);
 			
 			return user;
 			
@@ -76,14 +76,14 @@ public class UserDAOClass implements UserDAO {
 			rs.next();
 			
 			User user = new User(
-                rs.getInt("user_id"),
-                rs.getString("full_name"),
-				rs.getString("user_name"),
-				rs.getString("password")
-            );
+				rs.getInt("user_id"),
+                  	 	rs.getString("full_name"),
+                   	 	rs.getString("password"),
+		   	 	rs.getString("user_name")
+           		 );
 			
-            rs.close();
-            pstmt.close();
+            		rs.close();
+           		pstmt.close();
 
 			return user;
 			
@@ -103,6 +103,7 @@ public class UserDAOClass implements UserDAO {
                 "LEFT JOIN TVShow ON TVShow.tv_id = user_show.tv_id " +
                 "WHERE user_show.user_id = ?"
             );
+		
             pstmt.setInt(1, id);
 
             ResultSet rs = pstmt.executeQuery();
