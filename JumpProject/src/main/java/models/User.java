@@ -1,45 +1,57 @@
 package models;
 
 public class User {
-    
-    //Attributes
-    private int userId;
-    private String username;
-    private String password;
+    private String user_id;
+    private String user_name;
+    private String user_password;
+    private String user_userName;
 
-    public User(int userId, String username, String password) {
-		super();
-		this.userId = userId;
-		this.username = username;
-        this.password = password;
-	  }
+    public String getUser_id() {
+        return user_id;
+    }
 
-	  public int getUserId() {
-		  return userId;
-	  }
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
 
-	  public void setUserId(int userId) {
-		  this.userId = userId;
-	  }
+    public String getUser_name() {
+        return user_name;
+    }
 
-	  public String getUsername() {
-		  return username;
-	  }
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
 
-	  public void setUsername(String username) {
-		  this.username = username;
-	  }
+    public String getUser_password() {
+        return user_password;
+    }
 
-	  public String getPassword() {
-	  	return password;
-	  }
+    public void setUser_password(String user_password) {
+        this.user_password = user_password;
+    }
 
-	  public void setPassword(String password) {
-		  this.password = password;
-	  }
+    public String getUser_userName() {
+        return user_userName;
+    }
 
-	  @Override
-	  public String toString() {
-		  return "User [userId=" + userId + ", username=" + username + ", password=" + password + "]";
-	  }
+    public void setUser_userName(String user_userName) {
+        this.user_userName = user_userName;
+    }
+
+    public User(String user_id, String user_name, String user_password, String user_userName) {
+        this.user_id = user_id;
+        this.user_name = user_name;
+        this.user_password = user_password;
+        this.user_userName = user_userName;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "user_id='" + user_id + '\'' +
+                ", user_name='" + user_name + '\'' +
+                ", user_password='" + user_password + '\'' +
+                ", user_userName='" + user_userName + '\'' +
+                '}';
+    }
 }
