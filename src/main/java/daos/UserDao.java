@@ -1,7 +1,6 @@
 package daos;
 
 import java.util.List;
-import main.java.models.User;
 
 public interface UserDAO {
     public List<User> getAllUsers();
