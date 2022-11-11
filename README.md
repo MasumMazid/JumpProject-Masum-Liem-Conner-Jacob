@@ -14,7 +14,7 @@ We wanted an easy way for people to be able to see how much of a show they have 
 ![tv show erd](https://user-images.githubusercontent.com/102322868/201395793-05371b1c-2e3c-4bd8-80d5-37f0ef81eca2.jpg)
 
 
-###Contributers
+### Contributers
 -Masum Mazid
 -Jacob Cantrell
 -Conner Phips
