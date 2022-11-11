@@ -9,9 +9,8 @@ public class accountValidate {
 			return user;
 	}
 	public boolean validPassword(String password){
-	    return password != null &&
-	    
-	    password.matches("(?=.*[a-zA-Z])(?=.*[\\\\d~!@#$%^&*()_+{}\\\\[\\\\]?<>|]).{8,50}");
+	    return (password != null &&
+	    password.matches("(?=.*[a-zA-Z])(?=.*[\\\\d~!@#$%^&*()_+{}\\\\[\\\\]?<>|]).{8,50}"));
 	}
 
 }
