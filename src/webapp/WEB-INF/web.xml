@@ -1,0 +1,47 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<display-name>LoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.cognixia.jump.login.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CreateAccount</servlet-name>
+  	<display-name>CreateAccount</display-name>
+  	<description></description>
+  	<servlet-class>com.cognixia.jump.login.CreateAccount</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MainMenuServlet</servlet-name>
+  	<display-name>MainMenuServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.cognixia.jump.login.MainMenuServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ViewProgressServlet</servlet-name>
+  	<display-name>ViewProgressServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.cognixia.jump.login.ViewProgressServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CreateAccount</servlet-name>
+  	<url-pattern>/CreateAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MainMenuServlet</servlet-name>
+  	<url-pattern>/MainMenuServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewProgressServlet</servlet-name>
+  	<url-pattern>/ViewProgressServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
