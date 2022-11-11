@@ -1,10 +1,10 @@
 package models;
 
 public class TvShow {
-    private int tvShow_id;
+    private String tvShow_id;
     private String tvShow_name;
 
-    public TvShow(int tvShow_id, String tvShow_name) {
+    public TvShow(String tvShow_id, String tvShow_name) {
         this.tvShow_id = tvShow_id;
         this.tvShow_name = tvShow_name;
     }
@@ -17,11 +17,11 @@ public class TvShow {
                 '}';
     }
 
-    public int getTvShow_id() {
+    public String getTvShow_id() {
         return tvShow_id;
     }
 
-    public void setTvShow_id(int tvShow_id) {
+    public void setTvShow_id(String tvShow_id) {
         this.tvShow_id = tvShow_id;
     }
 

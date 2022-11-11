@@ -3,9 +3,11 @@
     <head>
         <meta content="text/html">
         <title>Project 1</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     </head>
     <body>
-        <h2><center>Welcome to TV Show Tracker!</center></h2>
+    	<div class="alert alert-danger"><center>Username already exists!</center></div>
+    	<h2><center>Welcome to TV Show Tracker!</center></h2>
         <h4><center>Please fill in the form below!</center></h4>
         <form method="get" action="CreateAccount">
             <center>

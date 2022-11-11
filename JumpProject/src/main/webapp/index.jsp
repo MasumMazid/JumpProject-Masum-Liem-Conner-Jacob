@@ -5,7 +5,8 @@
         <title>Project 1</title>
     </head>
     <body>
-        <h2><center>Welcome! Please Login!</center></h2>
+        <h2><center>Welcome to TV Show Tracker!</center></h2>
+        <h2><center>Please Login!</center></h2>
         <form method="get" action="LoginServlet">
             <center>
             <table>
