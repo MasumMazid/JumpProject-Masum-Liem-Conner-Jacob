@@ -3,51 +3,39 @@ package connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
 public class ConnectionMaker {
+	//single connection we will have and create
+	private static Connection conn = null;
 
-
-    //This is the connection maker
-
-    private static final String URL = "jdbc:mysql://localhost:3306/university";
-    // ?serverTimezone=EST5EDT   <-- add to end of URL if on Mac or Linux
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "root"; // alterantive: Root@123
-
-    private static Connection connection = null;
-
-
-    private static void makeConnection() {
-
-        try {
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-
-        } catch(SQLException e) {
-            System.out.println("Could not connect to database");
-        }
-
-    }
-
-    public static Connection getConnection() {
-
-        if(connection == null) {
-            makeConnection();
-        }
-
-        return connection;
-    }
-
-    public static void main(String[] args) {
-
-        Connection conn = ConnectionMaker.getConnection();
-
-        try {
-            conn.close();
-            System.out.println("Closed connection");
-
-
-        } catch(SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
+	//?serverTimezone=EST5EDT --> add to end on Mac & Linux
+	private static final String URL = "jdbc:mysql://localhost:3306/TVShowTracker?serverTimezone=EST5EDT";
+	
+	private static final String USERNAME = "root";
+	private static final String PASSWORD = "Root@123";
+	
+	private static void makeConnection() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			System.out.println("Connected.");
+		} catch (SQLException e) {
+			System.out.println("Could not connect to MySQL database.");
+		} catch(IllegalAccessException e2) {
+			e2.printStackTrace();
+		} catch(ClassNotFoundException e3) {
+			e3.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public static Connection getConnection() {
+		if (conn == null) {
+			makeConnection();
+		}
+		
+		return conn;
+	}
 }
