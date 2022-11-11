@@ -1,9 +1,10 @@
 package daos;
 
 import java.util.List;
+import models.TvShow;
 
 public interface TvShowDAO {
-    public List<TVShow> getAllTvShows();
-    public TVShow getTvShowById(int id);
-    public TVShow getTvShowByName(String name);
+    public List<TvShow> getAllTvShows();
+    public TvShow getTvShowById(int id);
+    public TvShow getTvShowByName(String name);
 }
