@@ -1,44 +1,41 @@
 package connection;
 
-import org.postgresql.core.ConnectionFactory;
-import org.postgresql.core.QueryExecutor;
-import org.postgresql.util.HostSpec;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
-public class  ConnectionMaker {
-    private static final String URL="jdbc:mysql://localhost:3306/tvshowtracker?serverTimezone=EST5EDT";
+public class ConnectionMaker {
+	//single connection we will have and create
+	private static Connection conn = null;
 
-    //Our usernames and login for database
-    private static final String USERNAME="root";
-    private static final String PASSWORD="root";
-    private static Connection connection=null;
-    public static void makeConnection(){
-        try {
-            connection=DriverManager.getConnection(URL,USERNAME,PASSWORD);
-            System.out.println("Connected");
-        }catch (SQLException e) {
-            System.out.println("Not connected");
-            e.printStackTrace();
-        }
-    }
-
-    public static  Connection getConnection() {
-        try {
-            if(connection==null) {
-                makeConnection();
-            }
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return connection;
-    }
+	//?serverTimezone=EST5EDT --> add to end on Mac & Linux
+	private static final String URL = "jdbc:mysql://localhost:3306/TVShowTracker?serverTimezone=EST5EDT";
+	
+	private static final String USERNAME = "root";
+	private static final String PASSWORD = "Root@123";
+	
+	private static void makeConnection() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			System.out.println("Connected.");
+		} catch (SQLException e) {
+			System.out.println("Could not connect to MySQL database.");
+		} catch(IllegalAccessException e2) {
+			e2.printStackTrace();
+		} catch(ClassNotFoundException e3) {
+			e3.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public static Connection getConnection() {
+		if (conn == null) {
+			makeConnection();
+		}
+		
+		return conn;
+	}
 }
