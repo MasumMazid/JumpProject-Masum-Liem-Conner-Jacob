@@ -9,10 +9,10 @@ public class ConnectionMaker {
 	private static Connection conn = null;
 
 	//?serverTimezone=EST5EDT --> add to end on Mac & Linux
-	private static final String URL = "jdbc:mysql://localhost:3306/TVShowTracker?serverTimezone=EST5EDT";
+	private static final String URL = "jdbc:mysql://localhost:3306/TVShowTracker";
 	
 	private static final String USERNAME = "root";
-	private static final String PASSWORD = "Root@123";
+	private static final String PASSWORD = "Root";
 	
 	private static void makeConnection() {
 		try {

@@ -1,7 +1,12 @@
 package exceptions;
 
 public class DuplicateUserException extends Exception {
-    public DuplicateUserException(String errorMessage) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public DuplicateUserException(String errorMessage) {
       super(errorMessage);
     }
 }
