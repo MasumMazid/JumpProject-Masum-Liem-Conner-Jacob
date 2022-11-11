@@ -1,0 +1,2 @@
+INSERT INTO `tvshowtracker`.`tvshow`(`tv_id`,`show_name`)VALUES('1','Star war'),('2','Game of Throne'),('3','The boys'),('4','Re:Zero'),('5','The Witcher'),('6','Gundam'),('7','Castlevania'),('8','Spiderman'),('9','Lucifer'),('10','Wall-E');
+INSERT INTO user_login Values(1,"1","1");
