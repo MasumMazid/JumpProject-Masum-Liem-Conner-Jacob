@@ -6,7 +6,6 @@ We wanted an easy way for people to be able to see how much of a show they have 
 ## Technologies 
 -Java 
 -Maven dependencies
--Junit 
 -Tom Cat 
 -MySQL
 
