@@ -8,37 +8,37 @@
   	<servlet-name>LoginServlet</servlet-name>
   	<display-name>LoginServlet</display-name>
   	<description></description>
-  	<servlet-class>com.cognixia.jump.login.LoginServlet</servlet-class>
+  	<servlet-class>servlets.LoginServlet</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>CreateAccount</servlet-name>
   	<display-name>CreateAccount</display-name>
   	<description></description>
-  	<servlet-class>com.cognixia.jump.login.CreateAccount</servlet-class>
+  	<servlet-class>servlets.CreateAccount</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>MainMenuServlet</servlet-name>
   	<display-name>MainMenuServlet</display-name>
   	<description></description>
-  	<servlet-class>com.cognixia.jump.login.MainMenuServlet</servlet-class>
+  	<servlet-class>servlets.MainMenuServlet</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>ViewProgressServlet</servlet-name>
   	<display-name>ViewProgressServlet</display-name>
   	<description></description>
-  	<servlet-class>com.cognixia.jump.login.ViewProgressServlet</servlet-class>
+  	<servlet-class>servlets.ViewProgressServlet</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>UpdateProgressServlet</servlet-name>
   	<display-name>UpdateProgressServlet</display-name>
   	<description></description>
-  	<servlet-class>com.cognixia.jump.login.UpdateProgressServlet</servlet-class>
+  	<servlet-class>servlets.UpdateProgressServlet</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>NewProgressServlet</servlet-name>
   	<display-name>NewProgressServlet</display-name>
   	<description></description>
-  	<servlet-class>com.cognixia.jump.login.NewProgressServlet</servlet-class>
+  	<servlet-class>servlets.NewProgressServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
