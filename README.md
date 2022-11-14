@@ -21,7 +21,7 @@ We wanted an easy way for people to be able to see how much of a show they have 
 -Liem Nguyen
 
 ###Work Distribution
-[heading-1](#heading-1 "Goto heading-1")
+Designition                         | Contributors
 ------------------------------------| --------------------------
 Database Implementation             |  Liem, Masum
 SQL Database Structure Development  | Connor, Liem, Jacob, Masum
