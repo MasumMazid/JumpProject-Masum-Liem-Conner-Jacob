@@ -28,5 +28,5 @@ SQL Database Structure Development  | Connor, Liem, Jacob, Masum
 Github Repo Creation and Management | Connor, Masum
 Backend Java                        | Masum, Jacob
 Models and associated DAO’s         | Masum, Jacob
-Exceptions                          | Masum, Liem
+Exceptions                          | Liem, Masum
 Servlets and JSP’s                  | Jacob
