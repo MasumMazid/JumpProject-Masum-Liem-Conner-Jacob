@@ -25,10 +25,6 @@
                         <td>Verify Password</td>
                         <td><input type="password" name="pw-verification"/></td>
                     </tr>
-                    <tr>
-                        <td>Full Name</td>
-                        <td><input type="text" name="full-name"/></td>
-                    </tr>
                 </tbody>
             </table>
             </br>

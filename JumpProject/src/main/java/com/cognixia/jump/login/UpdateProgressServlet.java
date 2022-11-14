@@ -12,25 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import daos.tvDao;
 import daos.UserDao;
 import models.User;
+import daos.tvDao;
+import java.util.List;
 
-/**
- * Servlet implementation class UpdateProgressServlet
- */
 public class UpdateProgressServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username").toString().trim().toLowerCase();
 		
-		UserDao userDao = new UserDao();
-		tvDao tvShowDao = new tvDao();
-		User user = userDao.getUserByUsername(username);
-		int totalTvShows = 0;
-		try {
-			totalTvShows = tvShowDao.getShows().size();
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
+		tvDao tvDao = new tvDao();
 		
 		PrintWriter pw = response.getWriter();
 		response.setContentType("text/html");
@@ -45,15 +36,32 @@ public class UpdateProgressServlet extends HttpServlet {
 				+"\" name=\"username\">Username: " + username 
 				+ "\t<a href=\"index.jsp\">Sign Out</a></div>");
 		pw.println("</br>");
-		pw.println("<center><h1>Progress Report</h1></center>");
-		pw.println("</br></br>");
-		
-		pw.println("<form method=\"get\" action=\"UpdateProgress?username="+username+"\"/><center>");
-		pw.println("<table><tbody>");
-		
-		pw.println("</tbody></table>");
+		pw.println("<center><h1>Update Progress</h1></center>");
+		pw.println("</br>");
+		pw.println("<h2><center>Please fill in the form!</center></h2>");
+		pw.println("</br>");
+		pw.println("<center><table><tbody>");
+		List<String> showsWithId;
+		try {
+			showsWithId = tvDao.getShowsWithId();
+			for (String show : showsWithId) 
+				pw.println("<tr><td>" + show + "</td></tr>");
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		pw.println("");
+		pw.println("</tbody></table></center>");
+		pw.println("</br>");
+		pw.println("<form method=\"get\" action=\"NewProgressServlet?username="+username+"\">");
+		pw.println("<input type=\"hidden\" name=\"username\" value=\""+username+"\"/>");
+		pw.println("<center><table><tbody>");
+		pw.println("<tr><td>Movie ID</td>");
+		pw.println("<td><input type=\"text\" name=\"movie-name\"/></td></tr>");
+		pw.println("<tr><td>New Progress (0-100)</td>");
+		pw.println("<td><input type=\"text\" name=\"new-progress\"/></td></tr>");
+		pw.println("</tbody></table></center>");
+		pw.println("</br><center><input type=\"submit\" value=\"Submit\"/></center>");
 		pw.println("</center></form>");
-		
 		pw.println("</body>");
 		pw.println("</html>");
 	}

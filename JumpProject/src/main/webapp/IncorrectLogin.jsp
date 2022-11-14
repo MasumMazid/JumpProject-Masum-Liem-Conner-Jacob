@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="alert alert-danger"><center>Incorrect Login</center></div>
-        <form method="post" action="LoginServlet">
+        <form method="get" action="LoginServlet">
             <center>
             <table>
                 <tbody>

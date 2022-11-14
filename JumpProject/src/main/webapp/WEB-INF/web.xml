@@ -35,10 +35,10 @@
   	<servlet-class>com.cognixia.jump.login.UpdateProgressServlet</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>UpdateProgress</servlet-name>
-  	<display-name>UpdateProgress</display-name>
+  	<servlet-name>NewProgressServlet</servlet-name>
+  	<display-name>NewProgressServlet</display-name>
   	<description></description>
-  	<servlet-class>com.cognixia.jump.login.UpdateProgress</servlet-class>
+  	<servlet-class>com.cognixia.jump.login.NewProgressServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
@@ -61,7 +61,7 @@
   	<url-pattern>/UpdateProgressServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>UpdateProgress</servlet-name>
-  	<url-pattern>/UpdateProgress</url-pattern>
+  	<servlet-name>NewProgressServlet</servlet-name>
+  	<url-pattern>/NewProgressServlet</url-pattern>
   </servlet-mapping>
 </web-app>

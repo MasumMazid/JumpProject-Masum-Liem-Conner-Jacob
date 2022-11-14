@@ -3,6 +3,7 @@ package com.cognixia.jump.login;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,24 +12,22 @@ import javax.servlet.http.HttpServletResponse;
 import models.User;
 import daos.UserDao;
 import daos.tvDao;
-import models.TvShow;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
 
-public class ViewProgressServlet extends HttpServlet {
+public class NewProgressServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("username").toString().trim().toLowerCase();
+		String username = request.getParameter("username").trim().toLowerCase();
+		int movieId = Integer.valueOf(request.getParameter("movie-name"));
+		int newProgress = Integer.valueOf(request.getParameter("new-progress"));
 		
 		UserDao userDao = new UserDao();
-		tvDao tvShowDao = new tvDao();
+		tvDao tvDao = new tvDao();
 		User user = userDao.getUserByUsername(username);
-		
 		int totalTvShows = 0;
 		try {
-			totalTvShows = tvShowDao.getShows().size();
+			totalTvShows = tvDao.getShows().size();
+			tvDao.updateShowProgress(user, movieId, newProgress);
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -38,7 +37,7 @@ public class ViewProgressServlet extends HttpServlet {
 		
 		pw.println("<html>");
 		pw.println("<head>");
-		pw.println("<title>Progress Report</title>");
+		pw.println("<title>Updated Progress</title>");
 		pw.println("<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\" integrity=\"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk\" crossorigin=\"anonymous\">");
 		pw.println("</head>");	
 		pw.println("<body>");
@@ -46,7 +45,10 @@ public class ViewProgressServlet extends HttpServlet {
 				+"\" name=\"username\">Username: " + username 
 				+ "\t<a href=\"index.jsp\">Sign Out</a></div>");
 		pw.println("</br>");
-		pw.println("<center><h1>Progress Report</h1></center>");
+		pw.println("<center><h1>Progress Updated</h1></center>");
+		pw.println("</br>");
+		pw.println("<h2><center>Here is your new progress report!</center></h2>");
+		pw.println("</br>");
 		pw.println("<center><table><tbody>");
 		pw.println("<tr><td>Completed: " + tvDao.getNumShowsCompleted(user) + " out of " + totalTvShows + "</td></tr>");
 		pw.println("</br></br>");
@@ -60,7 +62,7 @@ public class ViewProgressServlet extends HttpServlet {
 		pw.println("</br></br><tr><td>--------------------------</td></tr>");
 		List<String> userShows = tvDao.getShowsCompleted(user);
 		for (String show : userShows) {
-			pw.println("<tr><td>" + show + "</tr></td>");
+			pw.println("<tr><td>" + show + "</td></tr>");
 		}
 		pw.println("<tr></tr><tr></tr><tr>");
 		pw.println("<td><a href=\"MainMenuServlet?username="+username+"\">Main Menu</a></td>");
@@ -70,4 +72,5 @@ public class ViewProgressServlet extends HttpServlet {
 		pw.println("</body>");
 		pw.println("</html>");
 	}
+
 }

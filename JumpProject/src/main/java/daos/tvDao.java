@@ -32,6 +32,24 @@ public class tvDao implements crudDaos<User> {
         
         return usersList;
     }
+    
+    public List<String> getShowsWithId() throws SQLException {
+    	
+        PreparedStatement ps = conn.prepareStatement("SELECT * from tvshowtracker.tvshow");
+        ResultSet rs = ps.executeQuery();
+        List<String> usersList = new ArrayList<String>();
+        while (rs.next()) {
+            usersList.add(rs.getInt(1) + " - " + rs.getString(2));
+
+        }
+        
+        System.out.print("Available tv shows are: \n" + usersList + "\n ");
+        
+        rs.close();
+        ps.close();
+        
+        return usersList;
+    }
 
     public TvShow getTvShowByName(String name) {
         try {
@@ -58,9 +76,26 @@ public class tvDao implements crudDaos<User> {
         
         return null;
     }
+    
+    public boolean updateShowProgress(User user, int show_id, int show_progress) throws SQLException {
+        try {
+            PreparedStatement ps = conn.prepareStatement("Update user_show set show_prog=? where user_id=? and tv_id=?");
+            ps.setInt(1, show_progress);
+            ps.setInt(2, user.getUser_id());
+            ps.setInt(3, show_id);
+            ps.executeUpdate();
+
+            ps.close();
+            
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
         
     public static List<String> getShowsCompleted(User user) {
-        HashMap<String, Integer> Showprogress = new HashMap<>();
+        HashMap<String, Integer> Showprogress = new HashMap<String, Integer>();
         List<String> showProg = new ArrayList<String>();
 
         try {
@@ -79,10 +114,10 @@ public class tvDao implements crudDaos<User> {
                 } else if (rs.getInt(4) > 0) {
                     showString = "Still watching";
                 } else {
-                    showString = "Now yet started";
+                    showString = "Not yet started";
                 }
                 
-                showProg.add("Show: [" + rs.getString(3) + "] Progress: [" + rs.getInt(4) + "] " + showString);
+                showProg.add("Show: " + rs.getString(3) + "\tProgress: [" + rs.getInt(4) + "] " + showString);
             }
 
             rs.close();

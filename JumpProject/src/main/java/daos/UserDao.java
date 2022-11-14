@@ -13,15 +13,81 @@ import java.util.Random;
 public class UserDao {
 	private Connection connection = ConnectionMaker.getConnection();
 
-    public void CreateAccount(String username, String Password) throws SQLException {
+    public void CreateAccount(String username, String password) throws SQLException {
         Random rd = new Random();
         int x = rd.nextInt((10000 - 1) + 1);
-        User user = new User(x, username, Password);
-        PreparedStatement ps = connection.prepareStatement("INSERT INTO user_login(user_id,name,password) values(?,?,?)");
+        
+        PreparedStatement ps = connection.prepareStatement("INSERT INTO user_login(user_id,user_name,password) values(?,?,?)");
         ps.setInt(1, x);
-        ps.setString(2, user.getUser_name());
-        ps.setString(3, user.getUser_password());
+        ps.setString(2, username);
+        ps.setString(3, password);
+        
         ps.executeUpdate();
+        
+        ps.close();
+        
+        
+        PreparedStatement pstmt = connection.prepareStatement(
+        		"INSERT INTO user_show(user_id, tv_id, show_name, show_prog) VALUES(?,1,'Star Wars',0)"
+        );
+        pstmt.setInt(1, x);
+        pstmt.executeUpdate();
+        
+        pstmt = connection.prepareStatement(
+        		"INSERT INTO user_show(user_id, tv_id, show_name, show_prog) VALUES(?,2,'Game of Thrones',0)"
+        );
+        pstmt.setInt(1, x);
+        pstmt.executeUpdate();
+        
+        pstmt = connection.prepareStatement(
+        		"INSERT INTO user_show(user_id, tv_id, show_name, show_prog) VALUES(?,3,'The Boys',0)"
+        );
+        pstmt.setInt(1, x);
+        pstmt.executeUpdate();
+        
+        pstmt = connection.prepareStatement(
+        		"INSERT INTO user_show(user_id, tv_id, show_name, show_prog) VALUES(?,4,'Re:Zero',0)"
+        );
+        pstmt.setInt(1, x);
+        pstmt.executeUpdate();
+        
+        pstmt = connection.prepareStatement(
+        		"INSERT INTO user_show(user_id, tv_id, show_name, show_prog) VALUES(?,5,'The Witcher',0)"
+        );
+        pstmt.setInt(1, x);
+        pstmt.executeUpdate();
+        
+        pstmt = connection.prepareStatement(
+        		"INSERT INTO user_show(user_id, tv_id, show_name, show_prog) VALUES(?,6,'Gundam',0)"
+        );
+        pstmt.setInt(1, x);
+        pstmt.executeUpdate();
+        
+        pstmt = connection.prepareStatement(
+        		"INSERT INTO user_show(user_id, tv_id, show_name, show_prog) VALUES(?,7,'Castlevania',0)"
+        );
+        pstmt.setInt(1, x);
+        pstmt.executeUpdate();
+        
+        pstmt = connection.prepareStatement(
+        		"INSERT INTO user_show(user_id, tv_id, show_name, show_prog) VALUES(?,8,'Spiderman',0)"
+        );
+        pstmt.setInt(1, x);
+        pstmt.executeUpdate();
+        
+        pstmt = connection.prepareStatement(
+        		"INSERT INTO user_show(user_id, tv_id, show_name, show_prog) VALUES(?,9,'Lucifer',0)"
+        );
+        pstmt.setInt(1, x);
+        pstmt.executeUpdate();
+        
+        pstmt = connection.prepareStatement(
+        		"INSERT INTO user_show(user_id, tv_id, show_name, show_prog) VALUES(?,10,'Wall-E',0)"
+        );
+        pstmt.setInt(1, x);
+        pstmt.executeUpdate();
+        
+        pstmt.close();
     }
 
 
