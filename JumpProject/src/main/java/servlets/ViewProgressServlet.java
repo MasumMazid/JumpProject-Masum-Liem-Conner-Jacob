@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import models.User;
 import daos.UserDao;
 import daos.tvDao;
-import models.TvShow;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
 
 public class ViewProgressServlet extends HttpServlet {

@@ -7,10 +7,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.UUID;
 import java.util.Random;
 
-public class UserDao {
+public class UserDao implements UserDaoInterface {
 	private Connection connection = ConnectionMaker.getConnection();
 
     public void CreateAccount(String username, String password) throws SQLException {

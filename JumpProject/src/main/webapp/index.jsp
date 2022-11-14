@@ -24,8 +24,24 @@
             </table>
             </br>
            	<input type="submit" value="Login"/>
+           	</br></br>
+           	            <a href="CreateAccount.jsp">Create Account</a> 
+            <br style="margin:10px;">
             </br></br>
-            <a href="CreateAccount.jsp">Create Account</a> 
+            <br></br>
+            <b style="padding:10px; border:solid">Our Available Movie trackers, click to learn more</b>
+        <ul style="color:lightblue; list-style-type: none; border:solid">
+  <a href=https://www.imdb.com/star-wars/><li>Star Wars</li></a>
+  <a href=https://www.imdb.com/title/tt0944947/><li>Game of Throne</li></a>
+  <a href=https://www.imdb.com/title/tt1190634/><li>The Boys</li></a>
+  <a href=https://www.imdb.com/title/tt5607616/><li>Re: Zero</li></a>
+  <a href=https://www.imdb.com/title/tt5180504/f><li>The Witcher</li></a>
+  <a href=https://www.imdb.com/title/tt22367346/><li>Gundam</li></a>
+  <a href=https://www.imdb.com/title/tt6517102/><li>Castlevania</li></a>
+  <a href=https://www.imdb.com/title/tt0145487/><li>Spiderman</li></a>
+  <a href=https://www.imdb.com/title/tt4052886/?><li>Lucifer</li></a>
+ <a href=https://www.imdb.com/title/tt0910970/> <li>Walle</li></a>
+ </ul>
             </center>
         </form>
     </body>

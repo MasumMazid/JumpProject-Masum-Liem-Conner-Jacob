@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import daos.tvDao;
-import daos.UserDao;
-import models.User;
-import daos.tvDao;
 import java.util.List;
 
 public class UpdateProgressServlet extends HttpServlet {

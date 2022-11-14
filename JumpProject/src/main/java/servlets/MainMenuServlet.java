@@ -40,7 +40,6 @@ public class MainMenuServlet extends HttpServlet {
 		
 		pw.println("<form method=\"get\" action=\"ViewProgressServlet?username="+username+"\">");
 		pw.println("<center>");
-		pw.println("</br>");
 		pw.println("<center><input type=\"hidden\" name=\"username\" value=\""+username+"\"/></center>");
 		pw.println("<center><input type=\"submit\" name=\"viewProgress\" value=\"View Progress\"/></center>");
 		pw.println("</center>");
