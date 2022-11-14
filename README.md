@@ -20,4 +20,11 @@ We wanted an easy way for people to be able to see how much of a show they have 
 -Conner Phips
 -Liem Nguyen
 
-
+###Work Distribution
+Database Implementation |  Liem, Masum
+SQL Database Structure Development | Connor, Liem, Jacob, Masum
+Github Repo Creation and Management | Connor, Masum
+Backend Java| Masum, Jacob
+Models and associated DAO’s| Masum, Jacob
+Exceptions | Masum, Liem
+Servlets and JSP’s| Jacob
