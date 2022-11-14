@@ -10,7 +10,8 @@ We wanted an easy way for people to be able to see how much of a show they have 
 -MySQL
 
 ## ERD
-![tv show erd](https://user-images.githubusercontent.com/102322868/201395793-05371b1c-2e3c-4bd8-80d5-37f0ef81eca2.jpg)
+![image](https://user-images.githubusercontent.com/102322868/201698727-37041d11-1daf-41b8-8768-96575acbf913.png)
+
 
 
 ### Contributers
