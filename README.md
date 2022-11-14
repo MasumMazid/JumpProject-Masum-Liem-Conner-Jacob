@@ -27,6 +27,7 @@ Database Implementation             |  Liem, Masum
 SQL Database Structure Development  | Connor, Liem, Jacob, Masum
 Github Repo Creation and Management | Connor, Masum
 Backend Java                        | Masum, Jacob
+Console Program implementation      | Conncer, Masum, Liem
 Models and associated DAO’s         | Masum, Jacob
 Exceptions                          | Liem, Masum
 Servlets and JSP’s                  | Jacob
