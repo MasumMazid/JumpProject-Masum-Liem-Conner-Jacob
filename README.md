@@ -21,6 +21,7 @@ We wanted an easy way for people to be able to see how much of a show they have 
 -Liem Nguyen
 
 ###Work Distribution
+------------- | -------------
 Database Implementation |  Liem, Masum
 SQL Database Structure Development | Connor, Liem, Jacob, Masum
 Github Repo Creation and Management | Connor, Masum
